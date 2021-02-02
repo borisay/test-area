@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>Get to do</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <script type="text/javascript" src="createrequest.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+
+</head>
+<body>
+
+<h2>GTD board</h2>
+<p>To start working with GTD board click the button "Retrieve data from Server". The pre-created list of tasks (see file
+"task.json") will be downloaded from the server on the board.</p>
+
+<p>Any current task list will be stored on local browser storage using button "Save current data into LocalStorage" and retrieved
+after at any time without connecting with server. Before retrieving data from server or local storage "reload page" of the
+browser should be done to remove old data from page.</p>
+
+<p>Any task card can be drag and dropped to any column to change status of task including Trash column to remove task card.
+Yellow color of area where can drop the card will help to do it.</p>
+
+<p>Any task card can be edited using double click on the bottom part of the card. To button "Bug" and "Task" will be present
+on the bottom of card. In this mode user can edit task ID "tid", task name "name" on the card and also type of the
+task press needed button. any click button will close the edit mode.</p>
+
+<p>To create new card should double-click under buttons any column (depends on the status of task). Next double-click inside
+card activates edit mode for this card, to work with it like in previous point.</p>
+
+<form>
+  <div id="mydiv">
+    <input type="button" id="btn3" value="Retrieve data from Server" >
+    <input type="button" id="btn2" value="Retrieve data from LocalStorage" >
+    <input type="button" id="btn1" value="Save current data into LocalStorage">
+  </div>
+</form>
+
+<div id="board">
+  <div class="column" id="todo">
+    <h3> ToDo</h3>
+  </div>
+  <div class="column" id="inprogress">
+    <h3> In Progress</h3>
+  </div>
+  <div class="column" id="done">
+    <h3> Done</h3>
+  </div>
+  <div class="column" id="trash">
+    <h3> Trash</h3>
+
+  </div>
+
+</div>
+  <script type="text/javascript" src="createrequest.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
