@@ -4,14 +4,14 @@ window.onload = function () {
   document.getElementById("btn3").onclick = function(){
     buttonVisibility();
     const url = "https://borisay.github.io/test-area/gtd/tasks.json";
-    fetch(url).then(function(tasks) {
-      return tasks.json();
-    }).then(function(json) {
+    fetch(url).then((tasks) =>
+      tasks.json()
+    ).then(json => {
       tasks = json;
       gtd(tasks);
-    }).catch(function(err) {
-      console.log('Fetch problem: ' + err.message);
-    });
+    }).catch(err =>
+      console.log('Fetch problem: ' + err.message)
+    )
   };
 
 // get initial task from localstorage file.json
