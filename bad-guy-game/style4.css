@@ -1,0 +1,131 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+#birdsWrapper {
+  position: relative;
+  height: calc(100vh - 80px);
+  overflow: hidden;
+  background: linear-gradient(to right, #2f0763, #41299a);
+  margin-bottom: 1em;
+}
+
+.birds {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 100;
+}
+
+button.btn {
+  color: #41299a;
+  border: 3px solid #41299a;
+  font-weight: bold;
+  padding: 0.5vw;
+  font-size: calc(.6em + 0.5vw);
+}
+
+button.btn:disabled {
+  border-color: gray;
+  color: gray;
+}
+
+button.btn:disabled:hover {
+  cursor: not-allowed;
+  background: inherit;
+  color: gray;
+}
+
+button#select-speed {
+  /* width: 131px; */
+}
+
+button.btn:hover {
+  cursor: pointer;
+  background: #3c1f89;
+  color: white;
+}
+
+button#start,
+button#stop {
+  border-radius: 10px;
+  /* flex: 1 1 auto; */
+}
+
+bottom {
+  display: flex;
+  gap: 10px 20px;
+  flex-flow: row wrap;
+}
+
+.dropdown {
+  /* position: relative;
+  display: inline-block; */
+  /* flex: 1 1 auto; */
+}
+
+.dropdown option {
+  padding: 0.5em;
+}
+
+.dropdown option:hover {
+  background-color: #ddd;
+}
+
+.separator {
+  position: absolute;
+  bottom: 0;
+}
+
+.selectors {
+  position: relative;
+  display: flex;
+  gap: 10px 30px;
+  align-content: flex-end
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  bottom: 56px;
+}
+
+.show {
+  display: block;
+}
+
+
+/* display */
+
+.info p {
+  color: white;
+  padding: 1em;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 10px 20px;
+}
+
+span.data {
+  padding: .8vw;
+  border: 1px solid;
+  font-size: calc(.6em + 0.5vw);
+}
+
+span.b-data {
+  padding: .5vw;
+  border: 1px solid;
+  margin-left: 1em;
+  background-color: white;
+  color: #41299a;
+  font-weight: bold;
+}
