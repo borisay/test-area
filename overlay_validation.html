@@ -291,8 +291,10 @@
         if(validPhone(phone)){
           if(validEmail(email)) {
             alert("The form was validated to submit");
+            console.log(document.getElementById(fname).value)
             document.getElementById('overlay1').style.display = "none";
             document.getElementById('overlay2').style.display = "block";
+
           }
         }
       }
@@ -364,7 +366,7 @@
   //Check if value selected from select boxes
   function validSelect(item) {
     if(item.value === "Default") {
-      alert('Select your item from the box '+'"'+ item.name +'"');
+      alert('Pick your item from the box '+'"'+ item.name +'"');
       item.focus();
       return false;
     } else {
