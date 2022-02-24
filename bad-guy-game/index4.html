@@ -2,48 +2,52 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" type="text/css" href="style4.css" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style4.css" />
 </head>
 
 <body>
 
-  <div id="birdsWrapper">
-    <svg class="birds" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 117.75 28.61" width="117.75" height="28.61">
+    <div id="birdsWrapper">
+        <svg class="birds" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 117.75 28.61" width="117.75" height="28.61">
       <g id="layer1" fill="#a3a3a3">
         <path id="birdfly" />
       </g>
     </svg>
-  </div>
-
-  <bottom>
-    <div class="dropdown">
-      <select name='birds-number' id='number-list' class='dropdown-content' size="5">
-        <option value="1">1</option>
-        <option value="2">3</option>
-        <option value="3">5</option>
-        <option value="4">7</option>
-        <option value="5">10</option>
-      </select>
-      <button class="btn" id='select-number'>Select number</button>
     </div>
-    <div class="dropdown">
-      <select name='speed-select' id='speed-list' class='dropdown-content' size="4">
+    <footer>
+        <bottom>
+            <div class="dropdown">
+                <select name='birds-number' id='number-list' class='dropdown-content' size="5">
+          <option value="1">1</option>
+          <option value="2">3</option>
+          <option value="3">5</option>
+          <option value="4">7</option>
+          <option value="5">10</option>
+        </select>
+                <button class="btn" id='select-number'>Select number</button>
+            </div>
+            <div class="dropdown">
+                <select name='speed-select' id='speed-list' class='dropdown-content' size="4">
           <option value="1">slow</option>
           <option value="2">low</option>
           <option value="3">medium</option>
           <option value="4">fast</option>
         </select>
-      <button class="btn" id='select-speed'>Select speed</button>
-    </div>
-    <button class='btn' id='start'>Start</button>
-    <button class='btn' id='stop' disabled>Pause</button>
-  </bottom>
+                <button class="btn" id='select-speed'>Select speed</button>
+            </div>
+            <button class='btn' id='start'>Start</button>
+            <button class='btn' id='stop' disabled>Pause</button>
+        </bottom>
+        <div class="author">
+            <a href="https://github.com/borisay/bad_guy_game">Link to code</a>
+        </div>
+    </footer>
 
-  <script type="text/javascript" defer src="script4.js"></script>
+    <script type="text/javascript" defer src="script4.js"></script>
 
 </body>
 
