@@ -4,12 +4,11 @@ const d1 =
 const d2 =
     "M.28 12.2c-.94.75.64 1.28 2.32 1.78 3.47 1.07 8.2-.65 11.58-1.1 8.3-1.1 16.94.82 23.9 5.44.75.53 1.63 1.13 2.14 1.93 1.4 2.23.3 5.6 2.37 7.24 1.6 1.2 4 .3 5.7-.7 4.2-2.4 8.1-5.5 11.4-8.9 3.3-3.5 6.4-7.3 10.7-9.2 3.12-1.4 6.8-1.4 10.2-1.2C93.8 8 95.7 10 106.1 15c4.05.5 8.8.85 11.53-2.1-.77-.96-2.08-1.25-3.2-1.58C101.03 8.1 99.35 5.6 86.8.9c-4.38-1.63-9.5-.86-13.94.8-3.6 1.22-6.6 3.64-9.86 5.82-3.46 2.22-7.18 4.2-11.03 5.7-1.04.38-2.08.75-3.1.8-1.84.06-3.45-.98-5-1.82-7.1-3.86-15.17-5.6-23.25-5.3-4.1.12-8.05.82-11.97 2.03-1.9.6-3.8 1.28-5.64 2.16-.1.1-2.4.9-2.7 1.1z";
 const speed = new Map([
-    ["slow", ['all 4.95s cubic-bezier(0.9,1.1,0.9,1.1)', 5000]],
-    ["low", ['all 3.95s cubic-bezier(0.9,1.1,0.9,1.1)', 4000]],
-    ["medium", ['all 2.95s cubic-bezier(0.9,1.1,0.9,1.1)', 3000]],
-    ["fast", ['all 1.95s cubic-bezier(0.9,1.1,0.9,1.1)', 2000]]
+    ["slow", ['all 5s', 4000]],
+    ["low", ['all 4s', 3000]],
+    ["medium", ['all 3s', 2000]],
+    ["fast", ['all 2s', 1000]]
 ])
-
 
 // class to create new SVG for with ID
 
@@ -171,7 +170,8 @@ function runFly(id) {
     brd.posBird()
     brd.flyInfo = d2;
     changePosition[id] = setInterval(() => {
-        brd = new BirdPosition(id, speed.get(display.selectedSpeed[1])[0])
+        brd = new BirdPosition(id, speed.get(display.selectedSpeed[1])[0]) //transition time
+        console.log(brd);
         brd.posBird()
         brd.flyInfo = d2;
         setTimeout(() => {
@@ -180,8 +180,7 @@ function runFly(id) {
             }, 300 + id * 10); // period of changing of type of wings
             brd.flyInfo = d1;
         }, 1000 + id * 10); // period of changing of type of wings
-        // }
-    }, speed.get(display.selectedSpeed[1])[1] + id * 50); // period of changing direction of movement
+    }, speed.get(display.selectedSpeed[1])[1] + id * 50); // period of changing direction of movement, better to be less then transition time
 }
 
 
