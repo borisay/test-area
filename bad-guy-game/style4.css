@@ -5,6 +5,7 @@ html {
 
 body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
 }
 
 .hidden {
@@ -13,7 +14,7 @@ body {
 
 #birdsWrapper {
     position: relative;
-    height: calc(100vh - 80px);
+    height: calc(100vh - 160px);
     overflow: hidden;
     background: radial-gradient(#4698bf, #023654);
     margin-bottom: 1em;
@@ -31,8 +32,8 @@ button.btn {
     border: 3px solid #1a5879;
     border-radius: 3px;
     font-weight: bold;
-    padding: 0.5vw;
-    font-size: calc(.6em + 0.5vw);
+    padding: 0.5rem;
+    font-size: 1rem;
     background: transparent;
 }
 
@@ -79,6 +80,57 @@ button#stop {
     min-width: 6vw;
 }
 
+.display-wrapper {
+    display: flex;
+    gap: 10px 20px;
+    flex-flow: row wrap;
+    padding: 1em;
+    background-color: #023654;
+}
+
+.display-wrapper__list {
+    display: flex;
+    gap: 10px 20px;
+    flex-flow: row wrap;
+    align-items: center;
+    color: white;
+    list-style: none;
+    padding: 0;
+}
+
+.display-wrapper__item {
+    display: flex;
+    align-items: center;
+    border: 1px solid white;
+    border-radius: 7px;
+    padding: 0.1rem 0.1rem 0.1rem 0.6rem;
+}
+
+.display-wrapper__data,
+.display-wrapper__select {
+    color: #f44336;
+    padding: 0.4rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin: 0 0 0 1em;
+    background-color: white;
+}
+
+.display-wrapper__select {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    /* correct Safari user agent style for select - start*/
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background: url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0Ljk1IDEwIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6I2ZmZjt9LmNscy0ye2ZpbGw6IzQ0NDt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPmFycm93czwvdGl0bGU+PHJlY3QgY2xhc3M9ImNscy0xIiB3aWR0aD0iNC45NSIgaGVpZ2h0PSIxMCIvPjxwb2x5Z29uIGNsYXNzPSJjbHMtMiIgcG9pbnRzPSIxLjQxIDQuNjcgMi40OCAzLjE4IDMuNTQgNC42NyAxLjQxIDQuNjciLz48cG9seWdvbiBjbGFzcz0iY2xzLTIiIHBvaW50cz0iMy41NCA1LjMzIDIuNDggNi44MiAxLjQxIDUuMzMgMy41NCA1LjMzIi8+PC9zdmc+) no-repeat 95% 50%;
+    padding-right: 1.3em;
+    background-color: white;
+    /* for Safari user agent style - end*/
+    cursor: pointer;
+}
+
 footer {
     display: flex;
     align-items: center;
@@ -91,72 +143,6 @@ bottom {
     flex-flow: row wrap;
 }
 
-div.author {
-    font-size: calc(.6em + 0.5vw);
-}
-
 div.author a {
     color: #1a5879;
-}
-
-.dropdown option {
-    padding: 0.5em;
-}
-
-.dropdown option:hover {
-    background-color: #ddd;
-}
-
-.separator {
-    position: absolute;
-    bottom: 0;
-}
-
-.selectors {
-    position: relative;
-    display: flex;
-    gap: 10px 30px;
-    align-content: flex-end
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    font-size: calc(.6em + 0.5vw);
-    background-color: #f1f1f1;
-    overflow: auto;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    bottom: 56px;
-}
-
-.show {
-    display: block;
-}
-
-
-/* display */
-
-.info p {
-    color: white;
-    padding: 1em;
-    display: flex;
-    flex-flow: row wrap;
-    gap: 10px 20px;
-}
-
-span.data {
-    padding: .8vw .3vw .8vw .8vw;
-    border: 1px solid;
-    border-radius: 3px;
-    font-size: calc(.6em + 0.5vw);
-}
-
-span.b-data {
-    padding: .5vw;
-    border: 1px solid white;
-    margin-left: 1em;
-    background-color: white;
-    color: #f44336;
-    font-weight: bold;
 }

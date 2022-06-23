@@ -2,45 +2,66 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="style4.css" />
 </head>
 
 <body>
+    <div class="bird-wrapper__display display-wrapper">
+        <div class="display-wrapper__list">
+            <div class="display-wrapper__item">
+                <label for="number-list">Select a number</label>
+                <select name="birds-number" id="number-list" class="display-wrapper__select">
+                    <!-- <option value="">--Please choose an option--</option> -->
+                    <option value="1">1</option>
+                    <option value="3" selected>3</option>
+                    <option value="5">5</option>
+                    <option value="7">7</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+            <div class="display-wrapper__item">
+                <label for="speed-list">Choose a speed</label>
+                <select name="speed-select" id="speed-list" class="display-wrapper__select">
+                    <option value="slow">slow</option>
+                    <option value="low" selected>low</option>
+                    <option value="medium">medium</option>
+                    <option value="fast">fast</option>
+                </select>
+            </div>
+        </div>
+        <div class="display-wrapper__list">
+            <div class="display-wrapper__item">
+                <span class="a-data">Current number</span>
+                <div class="display-wrapper__data">0</div>
+            </div>
+            <div class="display-wrapper__item">
+                <span class="a-data">Status</span>
+                <div class="display-wrapper__data">0</div>
+            </div>
+            <div class="display-wrapper__item">
+                <span class="a-data">Time</span>
+                <div class="display-wrapper__data">0</div>
+            </div>
+        </div>
 
-    <div id="birdsWrapper">
-        <svg class="birds" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 117.75 28.61" width="117.75" height="28.61">
-      <g id="layer1" fill="#a3a3a3">
-        <path id="birdfly" />
-      </g>
-    </svg>
+
+    </div>
+    <div id="birdsWrapper" class="bird-wrapper">
+        <svg class=" birds bird-wrapper__birds" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 117.75 28.61" width="117.75" height="28.61">
+            <g id="layer1" fill="#a3a3a3">
+                <path id="birdfly" />
+            </g>
+        </svg>
+
     </div>
     <footer>
         <bottom>
-            <div class="dropdown">
-                <select name='birds-number' id='number-list' class='dropdown-content' size="5">
-          <option value="1">1</option>
-          <option value="2">3</option>
-          <option value="3">5</option>
-          <option value="4">7</option>
-          <option value="5">10</option>
-        </select>
-                <button class="btn" id='select-number'>Select number</button>
-            </div>
-            <div class="dropdown">
-                <select name='speed-select' id='speed-list' class='dropdown-content' size="4">
-          <option value="1">slow</option>
-          <option value="2">low</option>
-          <option value="3">medium</option>
-          <option value="4">fast</option>
-        </select>
-                <button class="btn" id='select-speed'>Select speed</button>
-            </div>
-            <button class='btn' id='start'>Start</button>
-            <button class='btn' id='stop' disabled>Pause</button>
+            <button class="btn" id="start">Start</button>
+            <button class="btn" id="stop" disabled>Pause</button>
         </bottom>
         <div class="author">
             <a href="https://github.com/borisay/bad_guy_game">Link to code</a>
@@ -48,7 +69,6 @@
     </footer>
 
     <script type="text/javascript" defer src="script4.js"></script>
-
 </body>
 
 </html>

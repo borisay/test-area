@@ -4,10 +4,10 @@ const d1 =
 const d2 =
     "M.28 12.2c-.94.75.64 1.28 2.32 1.78 3.47 1.07 8.2-.65 11.58-1.1 8.3-1.1 16.94.82 23.9 5.44.75.53 1.63 1.13 2.14 1.93 1.4 2.23.3 5.6 2.37 7.24 1.6 1.2 4 .3 5.7-.7 4.2-2.4 8.1-5.5 11.4-8.9 3.3-3.5 6.4-7.3 10.7-9.2 3.12-1.4 6.8-1.4 10.2-1.2C93.8 8 95.7 10 106.1 15c4.05.5 8.8.85 11.53-2.1-.77-.96-2.08-1.25-3.2-1.58C101.03 8.1 99.35 5.6 86.8.9c-4.38-1.63-9.5-.86-13.94.8-3.6 1.22-6.6 3.64-9.86 5.82-3.46 2.22-7.18 4.2-11.03 5.7-1.04.38-2.08.75-3.1.8-1.84.06-3.45-.98-5-1.82-7.1-3.86-15.17-5.6-23.25-5.3-4.1.12-8.05.82-11.97 2.03-1.9.6-3.8 1.28-5.64 2.16-.1.1-2.4.9-2.7 1.1z";
 const speed = new Map([
-    ["slow", ['all 5s', 4000]],
-    ["low", ['all 4s', 3000]],
-    ["medium", ['all 3s', 2000]],
-    ["fast", ['all 2s', 1000]]
+    ["slow", ['all 3.99s', 4000]],
+    ["low", ['all 2.99s', 3000]],
+    ["medium", ['all 1.99s', 2000]],
+    ["fast", ['all 0.99s', 1000]]
 ])
 
 // class to create new SVG for with ID
@@ -27,11 +27,9 @@ class Birds {
 
 class Display {
     constructor() {
-            this.selectedNumber = ["Start number", 3];
-            this.selectedSpeed = ["Speed", 'low'];
-            this.currentNumber = ["Current number", 0];
-            this.status = ["Status", "Stop"];
-            this.timer = ["Time", '0:00'];
+            this.currentNumber = 0;
+            this.status = "Stop";
+            this.timer = '0:00';
         }
         // convert sec to min : sec
     convertTime(amount) {
@@ -57,7 +55,7 @@ class BirdPosition {
     getPos() {
         return [this._x, this._y, this._scale];
     }
-    posBird() {
+    setPos() {
         this.bird.style.transition = this.transitionSet;
         this.bird.style.left = `${this._x}px`;
         this.bird.style.top = `${this._y}px`;
@@ -80,40 +78,23 @@ class BirdPosition {
 // Create DOM elements of display
 let display = new Display();
 let map = new Map(Object.entries(display))
-let infoDiv = document.createElement("div");
-infoDiv.classList.add("info");
-let info = document.createElement("p");
-
-map.forEach((key, val, m) => {
-    let span = document.createElement("span");
-    span.classList.add("data")
-    let a = document.createElement("span");
-    a.classList.add("a-data")
-    a.textContent = key[0];
-    let b = document.createElement("span");
-    b.classList.add("b-data")
-    b.textContent = key[1];
-    span.appendChild(a);
-    span.appendChild(b);
-    info.appendChild(span)
-})
-infoDiv.appendChild(info);
-wrap.appendChild(infoDiv);
+let inf = document.querySelectorAll(".display-wrapper__data");
+for (let i = 0; i < inf.length; i++) {
+    inf[i].textContent = Array.from(map)[i][1]
+}
 
 
 // Run update browser display
 let displayID;
 let runUpdateDisplay = () => {
     displayID = setInterval(() => {
-        let browserData = info.querySelectorAll(".b-data")
-        let displayArray = Array.from(map);
-        for (let n = 0; n < 5; n++) {
-            if (n !== 4) {
-                browserData[n].textContent = displayArray[n][1][1]
+        let inf = document.querySelectorAll(".display-wrapper__data");
+        for (let i = 0; i < inf.length; i++) {
+            if (i !== 2) {
+                inf[i].textContent = Object.values(display)[i];
             } else {
-                browserData[n].textContent = display.convertTime(displayArray[n][1][1])
+                inf[i].textContent = display.convertTime(Object.values(display)[i]);
             }
-
         }
     }, 500);
 };
@@ -127,7 +108,7 @@ let stopUpdateDisplay = () => {
 let timerID;
 let timerRun = () => {
     timerID = setInterval(() => {
-        display.timer[1]++;
+        display.timer++;
     }, 1000);
 };
 
@@ -137,20 +118,24 @@ let timerStop = () => {
 };
 
 const start = document.getElementById("start");
+const select = document.querySelectorAll(".display-wrapper__select");
 
 function once() {
-    for (let i = 0; i < display.selectedNumber[1]; i++) {
+    for (let i = 0; i < document.getElementById("number-list").value; i++) {
         startFly();
         wrap.style.cursor = "crosshair";
         start.disabled = true;
-        numberButton.disabled = true;
-        speedSelectButton.disabled = true;
+
+        for (const item of select) {
+            item.setAttribute("disabled", "disabled");
+            item.style.cursor = "not-allowed";
+        }
         stop.disabled = false;
-        display.status[1] = "Game started";
+        display.status = "Game started";
         runUpdateDisplay();
     }
     shot();
-    display.timer[1] = 0;
+    display.timer = 0;
     timerRun();
     start.removeEventListener("click", once);
 }
@@ -166,13 +151,12 @@ let changePosition = [];
 
 function runFly(id) {
     birdsNumber();
-    let brd = new BirdPosition(id, speed.get(display.selectedSpeed[1])[0])
-    brd.posBird()
+    let brd = new BirdPosition(id, speed.get(document.getElementById("speed-list").value)[0])
+    brd.setPos()
     brd.flyInfo = d2;
     changePosition[id] = setInterval(() => {
-        brd = new BirdPosition(id, speed.get(display.selectedSpeed[1])[0]) //transition time
-        console.log(brd);
-        brd.posBird()
+        brd = new BirdPosition(id, speed.get(document.getElementById("speed-list").value)[0]) //transition time
+        brd.setPos()
         brd.flyInfo = d2;
         setTimeout(() => {
             setTimeout(() => {
@@ -180,7 +164,8 @@ function runFly(id) {
             }, 300 + id * 10); // period of changing of type of wings
             brd.flyInfo = d1;
         }, 1000 + id * 10); // period of changing of type of wings
-    }, speed.get(display.selectedSpeed[1])[1] + id * 50); // period of changing direction of movement, better to be less then transition time
+    }, speed.get(document.getElementById("speed-list").value)[1] + id * 50); // period of changing direction of movement, better to be less then transition time
+
 }
 
 
@@ -192,9 +177,9 @@ function stopFly(id) {
 
 function birdsNumber() {
     let birdsNumber = wrap.querySelectorAll("svg").length - 1;
-    display.currentNumber[1] = birdsNumber;
+    display.currentNumber = birdsNumber;
     if (!birdsNumber) {
-        display.status[1] = "GAME OVER!";
+        display.status = "GAME OVER!";
         if (stop.textContent == "Play") {
             playPause()
         }
@@ -203,8 +188,10 @@ function birdsNumber() {
         start.addEventListener("click", once);
         wrap.removeEventListener("click", shotCallback);
         start.disabled = false;
-        numberButton.disabled = false;
-        speedSelectButton.disabled = false;
+        for (const item of select) {
+            item.removeAttribute("disabled");
+            item.style.cursor = "pointer";
+        }
         stop.disabled = true;
         wrap.style.cursor = "default";
     }
@@ -237,8 +224,8 @@ let shotFlame = (el) => {
     const styles = {
         "position": "absolute",
         "zIndex": 10,
-        "left": (el[0] - 45) + "px",
-        "top": (el[1] - 45) + "px"
+        "left": (el[0] - 50) + "px",
+        "top": (el[1] - 120) + "px"
     };
     shotFlame.src = "flame3.png"
     Object.assign(shotFlame.style, styles);
@@ -261,42 +248,6 @@ function overSound() {
     const over = new Audio("gameover.mp3");
     over.play();
 }
-
-
-const numberButton = document.getElementById("select-number");
-const numberList = document.getElementById("number-list");
-const speedSelectButton = document.getElementById("select-speed");
-const speedList = document.getElementById("speed-list");
-
-// open Numbers settings
-numberButton.addEventListener("click", () => {
-    numberList.classList.add("show");
-});
-
-// open Speed settings
-speedSelectButton.addEventListener("click", () => {
-    speedList.classList.add("show");
-});
-
-// set Numbers settings
-numberList.addEventListener("click", (e) => {
-    display.selectedNumber[1] = e.target.text;
-    if (numberList.classList.contains("show")) {
-        numberList.classList.remove("show");
-    }
-    display.timer[1] = 0;
-    runUpdateDisplay();
-});
-
-// set Speed settings
-speedList.addEventListener("click", (event) => {
-    display.selectedSpeed[1] = event.target.text;
-    if (speedList.classList.contains("show")) {
-        speedList.classList.remove("show");
-    }
-    display.timer[1] = 0;
-    runUpdateDisplay();
-});
 
 
 // Stop-Play function
