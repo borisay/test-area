@@ -280,8 +280,10 @@
     <script type="text/javascript">
         // document.addEventListener("load", showOverlay());
         //Function to show Form1 in the overlay mode
+        var msk = document.getElementById('mask');
+        var wrap = document.getElementById('wrapper');
+
         function showOverlay() {
-            var msk = document.getElementById('mask');
             var overlay1 = document.getElementById('overlay1');
             if (msk.style.display != "block") {
                 msk.style.display = "block";
@@ -298,21 +300,11 @@
             var phone = form.elements[1];
             var email = form.elements[3];
             if (validLetter(fname)) {
-                console.log("fname is OK")
                 if (validLetter(lname)) {
-                    console.log("lname is OK")
-                    console.log(form[2].value)
-                    console.log(form.elements[2].value)
                     if (validPhone(phone)) {
-                        console.log("phone is OK")
                         if (validEmail(email)) {
-                            console.log("email is OK")
-                                // alert("The form was validated to submit");
-                                // console.log(document.getElementById(fname).value)
-
                             document.getElementById('overlay1').style.display = "none";
                             document.getElementById('overlay2').style.display = "block";
-
                         }
                     }
                 }
@@ -368,15 +360,15 @@
                     if (validSelect(education)) {
                         if (validSelect(year)) {
                             if (validSelect(furthering)) {
-                                // alert("The form was validated to submit");
                                 document.getElementById('overlay2').style.display = "none";
                                 document.getElementById('overlay3').style.display = "block";
+                                msk.style.display = "none";
+                                wrap.style.display = "none";
                             }
                         }
                     }
                 }
             }
-            console.log("false in validForm2");
             return false;
         }
 
