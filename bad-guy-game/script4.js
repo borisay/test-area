@@ -204,7 +204,6 @@ function shot() {
 
 function shotCallback(ev) {
     if (ev.target.nodeName === "path") {
-        let target = ev.target.parentElement.parentElement;
         let shotPos = [ev.clientX, ev.clientY]
         stopFly(ev.target.parentElement.parentElement.id);
         ev.target.parentElement.parentElement.remove();
@@ -227,6 +226,9 @@ let shotFlame = (el) => {
         "left": (el[0] - 50) + "px",
         "top": (el[1] - 120) + "px"
     };
+    if (document.querySelector(".display-wrapper").clientHeight > 72) {
+        styles.top = (el[1] - 150) + "px"
+    }
     shotFlame.src = "flame3.png"
     Object.assign(shotFlame.style, styles);
     wrap.appendChild(shotFlame)
