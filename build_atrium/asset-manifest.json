@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.3e2f8b19.css",
+    "main.js": "/static/js/main.4f5867c9.js",
+    "static/js/453.44ec015b.chunk.js": "/static/js/453.44ec015b.chunk.js",
+    "static/media/UbuntuSans-VariableFont_wdth,wght.ttf": "/static/media/UbuntuSans-VariableFont_wdth,wght.723dafe9240c218e8bcc.ttf",
+    "static/media/font.woff": "/static/media/font.8d0ea1464aaebf68baaa.woff",
+    "static/media/font.woff2": "/static/media/font.d6a5b7f9003a4b4254dc.woff2",
+    "static/media/Lato-Light.ttf": "/static/media/Lato-Light.c7400fcad9e48ca9043f.ttf",
+    "static/media/Lato-Regular.ttf": "/static/media/Lato-Regular.9d883d540ee2b4de8024.ttf",
+    "static/media/SOV-20240212-7831.webp": "/static/media/SOV-20240212-7831.309b5c1c058917ea799d.webp",
+    "static/media/SOV-20240212-7704-1920.webp": "/static/media/SOV-20240212-7704-1920.c16f78fe02aa745576c7.webp",
+    "static/media/SOV-20240212-7803-1920.webp": "/static/media/SOV-20240212-7803-1920.000254d1391d1e9f408a.webp",
+    "static/media/contactus.webp": "/static/media/contactus.ad232c69760de4ad4205.webp",
+    "static/media/SOV-20240212-7835.webp": "/static/media/SOV-20240212-7835.e6871f753149264e8e5b.webp",
+    "static/media/logo-dark.webp": "/static/media/logo-dark.e78bf922d2f383947541.webp",
+    "index.html": "/index.html",
+    "main.3e2f8b19.css.map": "/static/css/main.3e2f8b19.css.map",
+    "main.4f5867c9.js.map": "/static/js/main.4f5867c9.js.map",
+    "453.44ec015b.chunk.js.map": "/static/js/453.44ec015b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3e2f8b19.css",
+    "static/js/main.4f5867c9.js"
+  ]
+}
