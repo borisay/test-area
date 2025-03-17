@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/test-area/build-atrium/index.html/static/css/main.01fb18e5.css",
-    "main.js": "/test-area/build-atrium/index.html/static/js/main.e3564377.js",
-    "static/js/453.44ec015b.chunk.js": "/test-area/build-atrium/index.html/static/js/453.44ec015b.chunk.js",
-    "static/media/UbuntuSans-VariableFont_wdth,wght.ttf": "/test-area/build-atrium/index.html/static/media/UbuntuSans-VariableFont_wdth,wght.723dafe9240c218e8bcc.ttf",
-    "static/media/font.woff": "/test-area/build-atrium/index.html/static/media/font.8d0ea1464aaebf68baaa.woff",
-    "static/media/font.woff2": "/test-area/build-atrium/index.html/static/media/font.d6a5b7f9003a4b4254dc.woff2",
-    "static/media/Lato-Light.ttf": "/test-area/build-atrium/index.html/static/media/Lato-Light.c7400fcad9e48ca9043f.ttf",
-    "static/media/Lato-Regular.ttf": "/test-area/build-atrium/index.html/static/media/Lato-Regular.9d883d540ee2b4de8024.ttf",
-    "static/media/SOV-20240212-7831.webp": "/test-area/build-atrium/index.html/static/media/SOV-20240212-7831.309b5c1c058917ea799d.webp",
-    "static/media/SOV-20240212-7704-1920.webp": "/test-area/build-atrium/index.html/static/media/SOV-20240212-7704-1920.c16f78fe02aa745576c7.webp",
-    "static/media/SOV-20240212-7803-1920.webp": "/test-area/build-atrium/index.html/static/media/SOV-20240212-7803-1920.000254d1391d1e9f408a.webp",
-    "static/media/contactus.webp": "/test-area/build-atrium/index.html/static/media/contactus.ad232c69760de4ad4205.webp",
-    "static/media/SOV-20240212-7835.webp": "/test-area/build-atrium/index.html/static/media/SOV-20240212-7835.e6871f753149264e8e5b.webp",
-    "static/media/logo-dark.webp": "/test-area/build-atrium/index.html/static/media/logo-dark.e78bf922d2f383947541.webp",
-    "index.html": "/test-area/build-atrium/index.html/index.html",
-    "main.01fb18e5.css.map": "/test-area/build-atrium/index.html/static/css/main.01fb18e5.css.map",
-    "main.e3564377.js.map": "/test-area/build-atrium/index.html/static/js/main.e3564377.js.map",
-    "453.44ec015b.chunk.js.map": "/test-area/build-atrium/index.html/static/js/453.44ec015b.chunk.js.map"
+    "main.css": "/test-area/build-atrium/static/css/main.3aa8f3be.css",
+    "main.js": "/test-area/build-atrium/static/js/main.9aacde39.js",
+    "static/js/453.44ec015b.chunk.js": "/test-area/build-atrium/static/js/453.44ec015b.chunk.js",
+    "static/media/UbuntuSans-VariableFont_wdth,wght.ttf": "/test-area/build-atrium/static/media/UbuntuSans-VariableFont_wdth,wght.723dafe9240c218e8bcc.ttf",
+    "static/media/font.woff": "/test-area/build-atrium/static/media/font.8d0ea1464aaebf68baaa.woff",
+    "static/media/font.woff2": "/test-area/build-atrium/static/media/font.d6a5b7f9003a4b4254dc.woff2",
+    "static/media/Lato-Light.ttf": "/test-area/build-atrium/static/media/Lato-Light.c7400fcad9e48ca9043f.ttf",
+    "static/media/Lato-Regular.ttf": "/test-area/build-atrium/static/media/Lato-Regular.9d883d540ee2b4de8024.ttf",
+    "static/media/SOV-20240212-7831.webp": "/test-area/build-atrium/static/media/SOV-20240212-7831.309b5c1c058917ea799d.webp",
+    "static/media/SOV-20240212-7704-1920.webp": "/test-area/build-atrium/static/media/SOV-20240212-7704-1920.c16f78fe02aa745576c7.webp",
+    "static/media/SOV-20240212-7803-1920.webp": "/test-area/build-atrium/static/media/SOV-20240212-7803-1920.000254d1391d1e9f408a.webp",
+    "static/media/contactus.webp": "/test-area/build-atrium/static/media/contactus.ad232c69760de4ad4205.webp",
+    "static/media/SOV-20240212-7835.webp": "/test-area/build-atrium/static/media/SOV-20240212-7835.e6871f753149264e8e5b.webp",
+    "static/media/logo-dark.webp": "/test-area/build-atrium/static/media/logo-dark.e78bf922d2f383947541.webp",
+    "index.html": "/test-area/build-atrium/index.html",
+    "main.3aa8f3be.css.map": "/test-area/build-atrium/static/css/main.3aa8f3be.css.map",
+    "main.9aacde39.js.map": "/test-area/build-atrium/static/js/main.9aacde39.js.map",
+    "453.44ec015b.chunk.js.map": "/test-area/build-atrium/static/js/453.44ec015b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.01fb18e5.css",
-    "static/js/main.e3564377.js"
+    "static/css/main.3aa8f3be.css",
+    "static/js/main.9aacde39.js"
   ]
 }
