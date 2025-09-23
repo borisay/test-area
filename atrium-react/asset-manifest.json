@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/atrium-react/static/css/main.9e01b428.css",
-    "main.js": "/atrium-react/static/js/main.16958bc6.js",
+    "main.js": "/atrium-react/static/js/main.7a050683.js",
     "static/js/453.44ec015b.chunk.js": "/atrium-react/static/js/453.44ec015b.chunk.js",
     "static/media/UbuntuSans-VariableFont_wdth,wght.ttf": "/atrium-react/static/media/UbuntuSans-VariableFont_wdth,wght.723dafe9240c218e8bcc.ttf",
     "static/media/vacation-img1.webp": "/atrium-react/static/media/vacation-img1.cf7d4b86e84325d8e2d1.webp",
@@ -24,11 +24,11 @@
     "static/media/header-logo.webp": "/atrium-react/static/media/header-logo.efcccf99338ad2f8e585.webp",
     "index.html": "/atrium-react/index.html",
     "main.9e01b428.css.map": "/atrium-react/static/css/main.9e01b428.css.map",
-    "main.16958bc6.js.map": "/atrium-react/static/js/main.16958bc6.js.map",
+    "main.7a050683.js.map": "/atrium-react/static/js/main.7a050683.js.map",
     "453.44ec015b.chunk.js.map": "/atrium-react/static/js/453.44ec015b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9e01b428.css",
-    "static/js/main.16958bc6.js"
+    "static/js/main.7a050683.js"
   ]
 }
